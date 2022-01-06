@@ -3,7 +3,7 @@ package internal
 import (
 	"database/sql"
 
-	_ "github.com/ivanArevalo1997/HackthonGo/internal/models"
+	models "github.com/ivanArevalo1997/HackthonGo/internal/models"
 )
 
 type RepositoryCustomer interface {
@@ -58,8 +58,7 @@ func (repo *repositoryCustomer) StoreAllCustomers() ([]models.Customer, error) {
 	}
 
 	for rows.Next() {
-		var sumaAgregar models.SumaPorCategoria
-		err = rows.Scan(&sumaAgregar.NombreCategoria, &sumaAgregar.Suma)
+		var sumaAgregar models.Customer
 		// err = rows.Scan(&ProductoLeido.ID, &ProductoLeido.Nombre, &ProductoLeido.Precio, &ProductoLeido.Categoria.ID, &ProductoLeido.Categoria.Nombre)
 		if err != nil {
 			return tablaSumasPorCategorias, err
