@@ -3,7 +3,7 @@ package internal
 import (
 	"database/sql"
 
-	"github.com/ivanArevalo1997/HackthonGo/internal/models"
+	_ "github.com/ivanArevalo1997/HackthonGo/internal/models"
 )
 
 type RepositoryCustomer interface {
